@@ -5,7 +5,7 @@ $secondary-theme: #FFBB38;
 $heading: #232532;
 $paragraph: #797979;
 $theme-bg: rgba(174, 28, 154, .08);
-$theme-color-two:#FF7062;
+$theme-color-two:#9c9c9c;
 $theme-color-three:#232532;
 $gray-color:#f8fafc;
 // font---------------
@@ -77,7 +77,7 @@ $garamonde:"EB Garamond", serif;
         width: 100%;
         z-index: 1;
         transition: all 0.4s ease-in-out;
-       
+
     }
 
     // hover-effect
@@ -89,7 +89,7 @@ $garamonde:"EB Garamond", serif;
             right: auto;
             left: 0;
             width: 100%;
-            
+
         }
 
         svg {
@@ -99,12 +99,12 @@ $garamonde:"EB Garamond", serif;
         }
         span{
             color: $primary-color;
-            
-           
+
+
         }
     }
 
-    
+
 }
 
 // (regular-buttons)
