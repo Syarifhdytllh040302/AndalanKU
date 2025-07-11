@@ -317,24 +317,24 @@ button {
   fill: #232532;
 }
 .product-wrapper-two .product-img .product-cart-items .cart-item:hover svg rect {
-  fill: #FF7062;
+  fill: #9c9c9c;
 }
 .product-wrapper-two .product-img .product-cart-items .cart-item:hover svg path {
   fill: #FFFFFF;
 }
 .product-wrapper-two .price .new-price {
-  color: #FF7062;
+  color: #9c9c9c;
 }
 .product-wrapper-two .product-cart-btn .product-btn {
   background-color: rgba(255, 112, 98, 0.2);
-  color: #FF7062;
+  color: #9c9c9c;
 }
 .product-wrapper-two .product-cart-btn .product-btn:hover {
-  background-color: #FF7062;
+  background-color: #9c9c9c;
   color: #FFFFFF;
 }
 .product-wrapper-two:hover {
-  border: 1px solid #FF7062;
+  border: 1px solid #9c9c9c;
 }
 
 .product-wrapper-three .product-img .product-cart-items .cart-item svg rect {
@@ -1226,7 +1226,7 @@ button {
   gap: 0px;
   height: 100%;
   border-radius: 0;
-  background: #FF7062;
+  background: #9c9c9c;
   padding: 1rem 2.2rem;
 }
 .header-two .header-search-btn .shop-btn::after {
@@ -1244,7 +1244,7 @@ button {
   flex: 1 1 0%;
 }
 .header-two .header-bottom {
-  background: #FF7062;
+  background: #9c9c9c;
   padding: 0;
 }
 .header-two .header-nav .header-category-menu {
@@ -1260,11 +1260,11 @@ button {
   margin-top: 1rem;
 }
 .header-two .header-nav .category-menu-section .category-dropdown .category-list-item:hover {
-  background-color: #FF7062;
+  background-color: #9c9c9c;
 }
 .header-two .header-nav .header-nav-menu .menu-list .header-sub-menu a:hover,
 .header-two .header-nav .header-nav-menu .menu-list .shop-menu a:hover {
-  color: #FF7062;
+  color: #9c9c9c;
 }
 .header-two .header-nav .header-vendor-btn {
   display: flex;
@@ -1364,11 +1364,11 @@ button {
   background-color: #FFFFFF;
 }
 .mobile-menu-two .offcanvas-body .header-top .shop-btn .btn-close {
-  background-color: #FF7062;
+  background-color: #9c9c9c;
 }
 .mobile-menu-two .offcanvas-body .category-dropdown .category-list .dropdown-item .drop-down-list-icon span svg,
 .mobile-menu-two .offcanvas-body .category-dropdown .category-list .dropdown-item .drop-down-list-icon span rect {
-  fill: #FF7062;
+  fill: #9c9c9c;
 }
 
 .mobile-menu-three {
@@ -2001,7 +2001,7 @@ button {
 }
 
 .arrival {
-  background: rgba(174, 28, 154, 0.08);
+  background: rgba(0, 0, 0, 0.08);
 }
 
 .flash-sale {
@@ -2326,11 +2326,11 @@ button {
   margin: 1rem 0 0 0;
 }
 .discount-section .section-content .wrapper-title .inner-text {
-  color: #FF7062;
+  color: #9c9c9c;
 }
 .discount-section .shop-btn {
   margin-top: 2rem;
-  background: #FF7062;
+  background: #9c9c9c;
   border-radius: 1rem;
   padding: 1.6rem 3.2rem;
 }
@@ -2516,11 +2516,11 @@ button {
 }
 
 .footer-service-section-two {
-  background: #FF7062;
+  background: #9c9c9c;
 }
 
 .footer-section-two .footer-link a:hover {
-  color: #FF7062;
+  color: #9c9c9c;
 }
 
 .footer-service-section-three {
