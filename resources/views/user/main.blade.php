@@ -8,11 +8,14 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="icon" href="{{asset('assets/images/homepage-one/icon.png')}}">
+    {{-- <link rel="icon" href="{{asset('assets/images/homepage-one/icon.png')}}"> --}}
 
     <!--title  -->
     <title>Andalanku</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer"/>
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <!--------------- swiper-css ---------------->
     <link rel="stylesheet" href="{{asset('css/swiper10-bundle.min.css')}}">
@@ -26,10 +29,7 @@
     <!---------------------- Scroll ------------------->
     <link rel="stylesheet" href="{{asset('css/aos-3.0.0.css')}}">
 
-    <!--------------- additional-css ---------------->
-    <link rel="stylesheet" href="{{asset('css/style-template.css')}}">
-
-
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
 </head>
 
@@ -40,24 +40,9 @@
 
     @include('user.component.footer')
 
-    <script src="{{asset('assets/js/jquery_3.7.1.min.js')}}"></script>
-
-    <!--------------- bootstrap-js ---------------->
-    <script src="{{asset('assets/js/bootstrap_5.3.2.bundle.min.js')}}"></script>
-
-    <!--------------- Range-Slider-js ---------------->
-    <script src="{{asset('assets/js/nouislider.min.js')}}"></script>
-
-    <!--------------- scroll-Animation-js ---------------->
-    <script src="{{asset('assets/js/aos-3.0.0.js')}}"></script>
-
-    <!--------------- swiper-js ---------------->
-    <script src="{{asset('assets/js/swiper10-bundle.min.js')}}"></script>
-
-    <!--------------- additional-js ---------------->
-    <script src="{{asset('assets/js/shopus.js')}}"></script>
-
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
 </body>
 
 </html>
