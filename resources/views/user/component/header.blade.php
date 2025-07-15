@@ -56,9 +56,9 @@
                     </div>
                 </div>
 
-                <button class="header-konsultasi">
+                <a href="https://api.whatsapp.com/send?phone=6285233899868&text=Halo%20kak,%20saya%20mau%20tanya..." target="_blank" class="text-decoration-none header-konsultasi">
                     <i class="fa fa-brands fa-whatsapp pe-2"></i>KONSULTASI VIA WHATSAPP
-                </button>
+                </a>
             </div>
         </div>
     </div>

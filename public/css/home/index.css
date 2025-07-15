@@ -92,6 +92,10 @@
 
 /* Category */
 
+#category-section{
+    scroll-margin-top: 90px;
+}
+
 .category-card {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 10px;
