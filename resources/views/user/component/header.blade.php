@@ -20,9 +20,8 @@
                 @endphp
 
                 <div class="category-menu-section">
-                    <button class="dropdown-btn" id="dropdownToggle">
-                        <i class="fa-solid fa-list"></i>
-                        <span class="list-text header-kategori">PILIH KATEGORI</span>
+                    <button class="header-kategori" id="dropdownToggle">
+                        <i class="fa-solid fa-list pe-2"></i>PILIH KATEGORI
                     </button>
 
                     <div class="category-dropdown" id="dropdownMenu">
@@ -58,7 +57,7 @@
                 </div>
 
                 <button class="header-konsultasi">
-                    <i class="fa fa-brands fa-whatsapp" style="padding-right: 10px"></i>KONSULTASI VIA WHATSAPP
+                    <i class="fa fa-brands fa-whatsapp pe-2"></i>KONSULTASI VIA WHATSAPP
                 </button>
             </div>
         </div>

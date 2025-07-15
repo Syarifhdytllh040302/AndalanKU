@@ -8,7 +8,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {{-- <link rel="icon" href="{{asset('assets/images/homepage-one/icon.png')}}"> --}}
+    <link rel="icon" href="{{asset('img/icon.png')}}">
 
     <!--title  -->
     <title>Andalanku</title>
