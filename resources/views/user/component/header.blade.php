@@ -1,4 +1,4 @@
-<header data-aos="fade-down" data-aos-duration="1000" style="position: relative; z-index: 10;">
+<header data-aos="fade-down" data-aos-duration="1000">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center py-4" style="border-bottom: 1px solid #eee;">
             <img src="{{ asset('img/header/logo.png') }}" alt="">

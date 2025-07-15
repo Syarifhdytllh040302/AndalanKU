@@ -21,6 +21,13 @@ body {
   overflow-x: hidden;
 }
 
+header{
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
 .header-konsultasi{
     background-color: var(--secondary-color);
     color: white;
