@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', function(){
     AOS.init();
 
-    const toggleBtn = document.getElementById('dropdownToggle');
     const dropdown = document.getElementById('dropdownMenu');
+    const toggleBtns = document.querySelectorAll('#dropdownToggleDesktop, #dropdownToggleMobile');
 
-    toggleBtn.addEventListener('click', function (e) {
-        e.stopPropagation();
-        dropdown.classList.toggle('show');
+    toggleBtns.forEach(toggleBtn => {
+        toggleBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            dropdown.classList.toggle('show');
+        });
     });
 
     document.addEventListener('click', function (e) {
-        if (!dropdown.contains(e.target) && !toggleBtn.contains(e.target)) {
-        dropdown.classList.remove('show');
+        if (!dropdown.contains(e.target) && ![...toggleBtns].some(btn => btn.contains(e.target))) {
+            dropdown.classList.remove('show');
         }
     });
 });

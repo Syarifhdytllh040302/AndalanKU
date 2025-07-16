@@ -149,13 +149,20 @@
 }
 
 .list-layanan {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     align-items: center;
     position: relative;
     gap: 4px;
     transition: all 0.3s ease;
     color: #979797;
+}
+
+@media (max-width: 768px) {
+    .list-layanan {
+        margin-bottom: 1rem;
+    }
+
 }
 
 .list-layanan span{

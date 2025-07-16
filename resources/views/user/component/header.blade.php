@@ -1,4 +1,4 @@
-<header data-aos="fade-down" data-aos-duration="1000">
+<header data-aos="fade-down" data-aos-duration="1000" data-aos-once="true">
     <div class="container">
         <div class="d-flex justify-content-between align-items-center py-4" style="border-bottom: 1px solid #eee;">
             <img src="{{ asset('img/header/logo.png') }}" alt="">
@@ -20,9 +20,10 @@
                 @endphp
 
                 <div class="category-menu-section">
-                    <button class="header-kategori" id="dropdownToggle">
+                    <button class="header-kategori d-none d-md-block" id="dropdownToggleDesktop">
                         <i class="fa-solid fa-list pe-2"></i>PILIH KATEGORI
                     </button>
+                    <i class="fa-solid fa-bars d-md-none fs-2 text-danger" id="dropdownToggleMobile"></i>
 
                     <div class="category-dropdown" id="dropdownMenu">
                         <ul class="category-list">
@@ -56,9 +57,11 @@
                     </div>
                 </div>
 
-                <a href="https://api.whatsapp.com/send?phone=6285233899868&text=Halo%20kak,%20saya%20mau%20tanya..." target="_blank" class="text-decoration-none header-konsultasi">
-                    <i class="fa fa-brands fa-whatsapp pe-2"></i>KONSULTASI VIA WHATSAPP
-                </a>
+                <div class="d-flex justify-content-center justify-content-md-end">
+                    <a href="https://api.whatsapp.com/send?phone=6285233899868&text=Halo%20kak,%20saya%20mau%20tanya..." target="_blank" class="text-decoration-none header-konsultasi d-none d-md-block">
+                        <i class="fa fa-brands fa-whatsapp pe-2"></i>KONSULTASI VIA WHATSAPP
+                    </a>
+                </div>
             </div>
         </div>
     </div>
