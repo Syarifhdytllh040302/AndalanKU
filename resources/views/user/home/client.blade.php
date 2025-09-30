@@ -1,7 +1,7 @@
 <section id="client-section">
-    <div class="container py-5">
+    <div class="container pb-5">
         <div class="row">
-            <h4 class="fw-semibold text-center mb-5">TELAH DIPERCAYA OLEH</h4>
+            <h4 class="fw-bold text-center mb-5">TELAH DIPERCAYA OLEH</h4>
             <div class="col-md-12 client-logo-wrapper">
                 <div class="client-track d-flex justify-content-center flex-wrap gap-4">
                     @php

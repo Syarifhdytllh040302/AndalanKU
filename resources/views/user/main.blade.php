@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords"
-        content="ShopUS, bootstrap-5, bootstrap, sass, css, HTML Template, HTML,html, bootstrap template, free template, figma, web design, web development,front end, bootstrap datepicker, bootstrap timepicker, javascript, ecommerce template">
+        content="Sewa Alat, Rental Alat, Event, Dekorasi, Pesta, Pernikahan, Peralatan, Pesta Musik, Pesta Budaya, Pesta Olahraga, Jakarta, Bandung, Yogyakarta, Surabaya, Malang">
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -39,6 +39,25 @@
     @yield('content')
 
     @include('user.component.footer')
+
+    <div class="whatsapp-wrapper">
+        <a href="https://api.whatsapp.com/send?phone=6285233899868&text=Halo%20kak,%20saya%20mau%20tanya%20apakah%20alat%20lighting%20ini%20masih%20tersedia%3F"
+            target="_blank"
+            class="whatsapp-float">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="text">Customer Service 2</span>
+        </a>
+    </div>
+
+    <div class="whatsapp-wrapper2">
+        <a href="https://api.whatsapp.com/send?phone=6285233899868&text=Halo%20kak,%20saya%20mau%20tanya%20apakah%20alat%20lighting%20ini%20masih%20tersedia%3F"
+            target="_blank"
+            class="whatsapp-float">
+            <i class="fa-brands fa-whatsapp"></i>
+            <span class="text">Customer Service 1</span>
+        </a>
+    </div>
+
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

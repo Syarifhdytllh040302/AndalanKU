@@ -1,32 +1,32 @@
 <header data-aos="fade-down" data-aos-duration="1000" data-aos-once="true">
     <div class="container">
-        <div class="d-flex justify-content-between align-items-center py-4" style="border-bottom: 1px solid #eee;">
-            <img src="{{ asset('img/header/logo.png') }}" alt="">
-            <div class="d-flex gap-3">
-                @php
-                    $categories = [
-                        ['img' => 'dresses.webp', 'text' => 'Dresses'],
-                        ['img' => 'bags.webp', 'text' => 'Bags'],
-                        ['img' => 'sweaters.webp', 'text' => 'Sweaters'],
-                        ['img' => 'shoes.webp', 'text' => 'Boots'],
-                        ['img' => 'gift.webp', 'text' => 'Gifts'],
-                        ['img' => 'sneakers.webp', 'text' => 'Sneakers'],
-                        ['img' => 'watch.webp', 'text' => 'Watches'],
-                        ['img' => 'ring.webp', 'text' => 'Gold Ring'],
-                        ['img' => 'cap.webp', 'text' => 'Cap'],
-                        ['img' => 'glass.webp', 'text' => 'Sunglasses'],
-                        ['img' => 'baby.webp', 'text' => 'Baby Shop'],
-                    ];
-                @endphp
+        <div class="d-flex justify-content-between align-items-center py-4 border-bottom">
 
+            <!-- Logo -->
+            <div class="flex-shrink-0">
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('img/header/logo.png') }}"
+                    alt="Logo"
+                    class="img-fluid"
+                    style="object-fit: cover; max-width: 250px;">
+                </a>
+            </div>
+
+            <!-- Menu kanan -->
+            <div class="d-flex gap-3 align-items-center">
+
+                <!-- Category -->
                 <div class="category-menu-section">
-                    <button class="header-kategori d-none d-md-block" id="dropdownToggleDesktop">
+                    <!-- Desktop trigger -->
+                    <button class="header-kategori text-nowrap d-none d-md-block" id="dropdownToggleDesktop">
                         <i class="fa-solid fa-list pe-2"></i>PILIH KATEGORI
                     </button>
+                    <!-- Mobile trigger -->
                     <i class="fa-solid fa-bars d-md-none fs-2 text-danger" id="dropdownToggleMobile"></i>
 
+                    <!-- Dropdown -->
                     <div class="category-dropdown" id="dropdownMenu">
-                        <ul class="category-list">
+                        <ul class="category-list list-unstyled m-0 p-0">
                             @php
                                 $categories = [
                                     ['icon' => 'fa-microphone', 'text' => 'Sound System'],
@@ -42,25 +42,18 @@
                                     ['icon' => 'fa-people-group', 'text' => 'Kursi VIP & Sofa']
                                 ];
                             @endphp
-
                             @foreach($categories as $category)
                             <li class="category-list-item">
                                 <a href="#">
                                     <div class="dropdown-item d-flex align-items-center">
-                                        <i class="fa-solid {{ $category['icon'] }} me-2 icon-left"></i>
-                                        <span class="dropdown-text">{{ $category['text'] }}</span>
+                                        <i class="fa-solid {{ $category['icon'] }} me-2"></i>
+                                        <span>{{ $category['text'] }}</span>
                                     </div>
                                 </a>
                             </li>
                             @endforeach
                         </ul>
                     </div>
-                </div>
-
-                <div class="d-flex justify-content-center justify-content-md-end">
-                    <a href="https://api.whatsapp.com/send?phone=6285233899868&text=Halo%20kak,%20saya%20mau%20tanya..." target="_blank" class="text-decoration-none header-konsultasi d-none d-md-block">
-                        <i class="fa fa-brands fa-whatsapp pe-2"></i>KONSULTASI VIA WHATSAPP
-                    </a>
                 </div>
             </div>
         </div>

@@ -16,4 +16,12 @@ document.addEventListener('DOMContentLoaded', function(){
             dropdown.classList.remove('show');
         }
     });
+
+    document.querySelectorAll(".accordion-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const content = btn.nextElementSibling;
+            btn.classList.toggle("active");
+            content.classList.toggle("open");
+        });
+    });
 });
