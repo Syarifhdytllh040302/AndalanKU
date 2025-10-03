@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Galeri;
+use App\Models\Produk;
+use App\Models\Testimoni;
 use Google\Analytics\Data\V1beta\BetaAnalyticsDataClient;
 use Google\Analytics\Data\V1beta\DateRange;
 use Google\Analytics\Data\V1beta\Dimension;
@@ -14,6 +17,10 @@ class DashboardController extends Controller
     {
         $active = "dashboard";
         $title = "Dashboard";
+
+        $totalProduk = Produk::count();
+        $totalGaleri = Galeri::count();
+        $totalTestimoni = Testimoni::count();
 
         $client = new BetaAnalyticsDataClient([
             'credentials' => storage_path('app/andalanku-473303-9cf243226bc7.json'),
@@ -41,6 +48,6 @@ class DashboardController extends Controller
             $data[] = (int) $row->getMetricValues()[0]->getValue();
         }
 
-        return view('admin.management.dashboard', compact('labels', 'active', 'data', 'title'));
+        return view('admin.management.dashboard', compact('labels', 'active', 'data', 'title', 'totalProduk', 'totalGaleri', 'totalTestimoni'));
     }
 }

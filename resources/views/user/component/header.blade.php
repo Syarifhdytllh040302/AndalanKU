@@ -27,27 +27,12 @@
                     <!-- Dropdown -->
                     <div class="category-dropdown" id="dropdownMenu">
                         <ul class="category-list list-unstyled m-0 p-0">
-                            @php
-                                $categories = [
-                                    ['icon' => 'fa-microphone', 'text' => 'Sound System'],
-                                    ['icon' => 'fa-palette', 'text' => 'Dekorasi'],
-                                    ['icon' => 'fa-lightbulb', 'text' => 'Lighting'],
-                                    ['icon' => 'fa-warehouse', 'text' => 'Panggung'],
-                                    ['icon' => 'fa-chair', 'text' => 'Kursi & Meja'],
-                                    ['icon' => 'fa-tent', 'text' => 'Tenda Acara'],
-                                    ['icon' => 'fa-tv', 'text' => 'LED TV / Projector'],
-                                    ['icon' => 'fa-bullhorn', 'text' => 'MC & Entertainer'],
-                                    ['icon' => 'fa-cake-candles', 'text' => 'Peralatan Ulang Tahun'],
-                                    ['icon' => 'fa-glass-cheers', 'text' => 'Peralatan Pernikahan'],
-                                    ['icon' => 'fa-people-group', 'text' => 'Kursi VIP & Sofa']
-                                ];
-                            @endphp
-                            @foreach($categories as $category)
+                            @foreach($kategoriAll as $data)
                             <li class="category-list-item">
-                                <a href="#">
+                                <a href="{{ route('homeProduct', ['kategori' => $data->nama_kategori]) }}">
                                     <div class="dropdown-item d-flex align-items-center">
-                                        <i class="fa-solid {{ $category['icon'] }} me-2"></i>
-                                        <span>{{ $category['text'] }}</span>
+                                        <img src="{{ asset('img/icon/' . $data->icon_kategori) }}" alt="Icon Kategori" class="pe-3" width="50">
+                                        <span>{{ $data->nama_kategori }}</span>
                                     </div>
                                 </a>
                             </li>

@@ -5,12 +5,12 @@
 
 @section('content')
 <div class="row d-flex justify-content-between align-items-center">
-    <div class="mb-3 col-6">
+    <div class="col-6">
         <input type="text" id="search-nama" class="form-control" placeholder="Cari berdasarkan client produk...">
     </div>
 
     <div class="col-auto">
-        <a href="#" class="btn btn-primary">
+        <a href="{{ route('tambahClient') }}" class="btn btn-primary">
             <i class="fa-solid fa-plus"></i>
             <span class="fw-semibold">Tambah Data</span>
         </a>
@@ -30,23 +30,23 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for ($i = 0; $i < 50; $i++)
+                    @foreach ($data as $client)
                     <tr>
-                        <td>{{ $i + 1 }}</td>
-                        <td>Client {{ $i + 1 }}</td>
-                        <td><img src="{{ asset('img/index/client/Kemnaker.png') }}" class="img-fluid" alt="Logo Client" width="150"/></td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $client->nama_client }}</td>
+                        <td><img src="{{ asset('img/data/client/'. $client->logo_client) }}" loading="lazy" class="img-fluid" alt="Logo Client" width="150"/></td>
                         <td>
                             <div class="d-flex gap-2">
-                                <a href="#" class="btn btn-sm btn-primary">
+                                <a href="{{ route('editClient', $client->id) }}" class="btn btn-sm btn-primary">
                                     <i class="fa-solid fa-pen"></i>
                                 </a>
-                                <a href="#" class="btn btn-sm btn-danger">
+                                <button type="button" onclick="hapusData({{ $client->id }}, 'client')" class="btn btn-sm btn-danger">
                                     <i class="fa-solid fa-trash"></i>
-                                </a>
+                                </button>
                             </div>
                         </td>
                     </tr>
-                    @endfor
+                    @endforeach
                 </tbody>
             </table>
         </div>

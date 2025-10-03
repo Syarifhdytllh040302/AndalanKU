@@ -26,7 +26,13 @@ body {
     min-height: 100vh;
     background-color: #141419;
     color: #fff;
+    position: fixed;
     transition: transform 0.3s ease-in-out;
+}
+
+main{
+    margin-left: 250px;
+    transition: all 0.3s ease-in-out;
 }
 
 /* Sidebar link */
@@ -51,6 +57,10 @@ body {
 
 /* Mode mobile: sidebar jadi kanan */
 @media (max-width: 767.98px) {
+    main{
+        margin-left: 0px;
+    }
+
     .sidebar {
         position: fixed;
         top: 0;

@@ -2,45 +2,125 @@
   display: grid;
   gap: 10px;
   padding: 10px;
+  height: 800px; /* fix height agar area cukup */
 }
 
-/* --- Default Mobile (≤600px): 1 kolom --- */
-.grid-container {
+/* === 1 gambar === */
+.grid-container.grid-count-1 {
   grid-template-columns: 1fr;
-  grid-auto-rows: 200px;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "gambar1";
+}
+.grid-container.grid-count-1 .img-1 {
+  grid-area: gambar1;
 }
 
-/* --- Tablet (601px–991px): 2 kolom auto --- */
-@media (min-width: 601px) and (max-width: 991px) {
-  .grid-container {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 200px;
-  }
+/* === 2 gambar === (atas bawah) */
+.grid-container.grid-count-2 {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "gambar1"
+    "gambar2";
 }
+.grid-container.grid-count-2 .img-1 { grid-area: gambar1; }
+.grid-container.grid-count-2 .img-2 { grid-area: gambar2; }
 
-/* --- Desktop (≥992px): pakai layout khusus --- */
-@media (min-width: 992px) {
-  .grid-container {
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(4, 200px);
-    grid-template-areas:
-      "gambar1 gambar1 gambar2 gambar2 gambar3"
-      "gambar4 gambar4 gambar2 gambar2 gambar5"
-      "gambar6 gambar7 gambar7 gambar8 gambar8"
-      "gambar6 gambar7 gambar7 gambar9 gambar10";
-  }
-
-  .grid-container .img-1 { grid-area: gambar1; }
-  .grid-container .img-2 { grid-area: gambar2; }
-  .grid-container .img-3 { grid-area: gambar3; }
-  .grid-container .img-4 { grid-area: gambar4; }
-  .grid-container .img-5 { grid-area: gambar5; }
-  .grid-container .img-6 { grid-area: gambar6; }
-  .grid-container .img-7 { grid-area: gambar7; }
-  .grid-container .img-8 { grid-area: gambar8; }
-  .grid-container .img-9 { grid-area: gambar9; }
-  .grid-container .img-10 { grid-area: gambar10; }
+/* === 3 gambar === */
+.grid-container.grid-count-3 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  grid-template-areas:
+    "gambar1 gambar2 gambar3";
 }
+.grid-container.grid-count-3 .img-1 { grid-area: gambar1; }
+.grid-container.grid-count-3 .img-2 { grid-area: gambar2; }
+.grid-container.grid-count-3 .img-3 { grid-area: gambar3; }
+
+/* === 4 gambar === */
+.grid-container.grid-count-4 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas:
+    "gambar1 gambar2"
+    "gambar3 gambar4";
+}
+.grid-container.grid-count-4 .img-1 { grid-area: gambar1; }
+.grid-container.grid-count-4 .img-2 { grid-area: gambar2; }
+.grid-container.grid-count-4 .img-3 { grid-area: gambar3; }
+.grid-container.grid-count-4 .img-4 { grid-area: gambar4; }
+
+/* === 5 sampai 10 gambar === */
+/* kamu bisa pakai layout yang sudah kamu punya tadi */
+.grid-container.grid-count-5,
+.grid-container.grid-count-6,
+.grid-container.grid-count-7,
+.grid-container.grid-count-8,
+.grid-container.grid-count-9,
+.grid-container.grid-count-10 {
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(4, 200px);
+  grid-template-areas:
+    "gambar1 gambar1 gambar2 gambar2 gambar3"
+    "gambar4 gambar4 gambar2 gambar2 gambar5"
+    "gambar6 gambar7 gambar7 gambar8 gambar8"
+    "gambar6 gambar7 gambar7 gambar9 gambar10";
+}
+.grid-container.grid-count-5 .img-1,
+.grid-container.grid-count-6 .img-1,
+.grid-container.grid-count-7 .img-1,
+.grid-container.grid-count-8 .img-1,
+.grid-container.grid-count-9 .img-1,
+.grid-container.grid-count-10 .img-1 { grid-area: gambar1; }
+
+.grid-container.grid-count-5 .img-2,
+.grid-container.grid-count-6 .img-2,
+.grid-container.grid-count-7 .img-2,
+.grid-container.grid-count-8 .img-2,
+.grid-container.grid-count-9 .img-2,
+.grid-container.grid-count-10 .img-2 { grid-area: gambar2; }
+
+.grid-container.grid-count-5 .img-3,
+.grid-container.grid-count-6 .img-3,
+.grid-container.grid-count-7 .img-3,
+.grid-container.grid-count-8 .img-3,
+.grid-container.grid-count-9 .img-3,
+.grid-container.grid-count-10 .img-3 { grid-area: gambar3; }
+
+.grid-container.grid-count-5 .img-4,
+.grid-container.grid-count-6 .img-4,
+.grid-container.grid-count-7 .img-4,
+.grid-container.grid-count-8 .img-4,
+.grid-container.grid-count-9 .img-4,
+.grid-container.grid-count-10 .img-4 { grid-area: gambar4; }
+
+.grid-container.grid-count-5 .img-5,
+.grid-container.grid-count-6 .img-5,
+.grid-container.grid-count-7 .img-5,
+.grid-container.grid-count-8 .img-5,
+.grid-container.grid-count-9 .img-5,
+.grid-container.grid-count-10 .img-5 { grid-area: gambar5; }
+
+.grid-container.grid-count-6 .img-6,
+.grid-container.grid-count-7 .img-6,
+.grid-container.grid-count-8 .img-6,
+.grid-container.grid-count-9 .img-6,
+.grid-container.grid-count-10 .img-6 { grid-area: gambar6; }
+
+.grid-container.grid-count-7 .img-7,
+.grid-container.grid-count-8 .img-7,
+.grid-container.grid-count-9 .img-7,
+.grid-container.grid-count-10 .img-7 { grid-area: gambar7; }
+
+.grid-container.grid-count-8 .img-8,
+.grid-container.grid-count-9 .img-8,
+.grid-container.grid-count-10 .img-8 { grid-area: gambar8; }
+
+.grid-container.grid-count-9 .img-9,
+.grid-container.grid-count-10 .img-9 { grid-area: gambar9; }
+
+.grid-container.grid-count-10 .img-10 { grid-area: gambar10; }
 
 /* Item wrapper */
 .grid-container > div {

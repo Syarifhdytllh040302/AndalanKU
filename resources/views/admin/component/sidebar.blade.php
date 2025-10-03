@@ -24,7 +24,7 @@
 
         <!-- Logout -->
         <div class="mt-auto pt-4">
-            <a href="/logout" class="btn btn-danger w-100">
+            <a href="{{ route('logout') }}" class="btn btn-danger w-100">
                 <i class="fa-solid fa-right-from-bracket me-2"></i> Logout
             </a>
         </div>

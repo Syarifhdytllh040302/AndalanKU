@@ -9,7 +9,7 @@
             <div class="col-md-8 d-flex flex-column justify-content-center align-items-start" data-aos="fade-right" data-aos-duration="1000">
                 <h1 style="font-weight: bold">ANDALAN PRODUCTION SIAP MENJADI,<br>ANDALAN KEBUTUHAN ANDA.</h1>
                 <p>Alat Lengkap, Event Hebat!</p>
-                <a href="#category-section" class="mt-4 button-sewa">
+                <a href="{{ route('homeProduct') }}" class="mt-4 button-sewa">
                     <span>Sewa Sekarang</span><i class="fa-solid fa-arrow-right"></i>
                 </a>
             </div>

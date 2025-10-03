@@ -4,6 +4,29 @@
 @section('subtitle', 'Kelola data produk Andalanku mulai dari menambah, mengedit, hingga menghapus produk yang tersedia.')
 
 @section('content')
+
+@if (session('success'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        const Toast = Swal.mixin({
+        toast: true,
+        position: "bottom-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+        }
+        });
+        Toast.fire({
+            icon: "success",
+            title: "{{ session('success') }}"
+        });
+    </script>
+@endif
+
 <div class="row d-flex justify-content-between align-items-center">
     <div class="col-6">
         <input type="text" id="search-nama" class="form-control" placeholder="Cari berdasarkan nama produk...">
@@ -33,26 +56,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @for ($i = 0; $i < 50; $i++)
+                    @foreach($data as $produk)
                     <tr>
-                        <td>{{ $i + 1 }}</td>
-                        <td>Produk {{ $i + 1 }}</td>
-                        <td>Ini deskripsi produk ke-{{ $i + 1 }}</td>
-                        <td>{{ ['Elektronik', 'Fashion', 'Makanan', 'Alat Rumah', 'Kesehatan'][rand(0, 4)] }}</td>
-                        <td>Rp {{ number_format(rand(100000, 999999), 0, ',', '.') }}</td>
-                        <td><img src="{{ asset('img/index/dummy-image.jpg') }}" class="img-fluid" alt="Gambar Produk" width="55"/></td>
+                        <td>{{ $loop->iteration }}</td>
+                        <td>{{ $produk->nama_produk }}</td>
+                        <td>{{ Str::limit($produk->deskripsi, 30) }}</td>
+                        <td>{{ $produk->kategori->nama_kategori }}</td>
+                        <td>Rp {{ number_format($produk->harga, 0, ',', '.') }}</td>
+                        <td><img src="{{ asset('img/data/produk/'. $produk->gambar) }}" loading="lazy" class="img-fluid" alt="Gambar Produk" width="55"/></td>
                         <td>
                             <div class="d-flex gap-2">
-                                <a href="{{ route('editProduk') }}" class="btn btn-sm btn-primary">
+                                <a href="{{ route('editProduk', $produk->id) }}" class="btn btn-sm btn-primary">
                                     <i class="fa-solid fa-pen"></i>
                                 </a>
-                                <a href="#" class="btn btn-sm btn-danger">
+                                <button type="button" onclick="hapusData({{ $produk->id }}, 'produk')" class="btn btn-sm btn-danger">
                                     <i class="fa-solid fa-trash"></i>
-                                </a>
+                                </button>
                             </div>
                         </td>
                     </tr>
-                    @endfor
+                    @endforeach
                 </tbody>
             </table>
         </div>

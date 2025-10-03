@@ -19,7 +19,9 @@ class GaleriFactory extends Factory
         return [
             'title' => $this->faker->sentence(),
             'caption' => $this->faker->sentence(),
-            'gambar' => $this->faker->imageUrl(),
+            'thumbnail' => $this->faker->imageUrl(),
+            'dokumentasi' => $this->faker->imageUrl(),
+            'rancangan' => $this->faker->imageUrl(),
         ];
     }
 }

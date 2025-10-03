@@ -4,6 +4,28 @@
 @section('subtitle', 'Ringkasan data dan aktivitas terbaru untuk mengelola Andalanku Production.')
 
 @section('content')
+@if (session('success'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script>
+        const Toast = Swal.mixin({
+        toast: true,
+        position: "bottom-end",
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.onmouseenter = Swal.stopTimer;
+            toast.onmouseleave = Swal.resumeTimer;
+        }
+        });
+        Toast.fire({
+            icon: "success",
+            title: "{{ session('success') }}"
+        });
+    </script>
+@endif
+
     <div class="row mx-1">
         <div class="col-lg-4 col-md-12 px rounded-2 shadow-sm">
             <div class="card border-0">
@@ -14,7 +36,7 @@
                             <i class="fa-solid fa-toolbox"></i>
                         </div>
                         <div class="col-12 pt-3">
-                            <h1 class="fw-bold text-start">10</h1>
+                            <h1 class="fw-bold text-start">{{ $totalProduk }}</h1>
                         </div>
                     </div>
                 </div>
@@ -29,7 +51,7 @@
                             <i class="fa-solid fa-images"></i>
                         </div>
                         <div class="col-12 pt-3">
-                            <h1 class="fw-bold text-start">10</h1>
+                            <h1 class="fw-bold text-start"> {{ $totalGaleri }} </h1>
                         </div>
                     </div>
                 </div>
@@ -44,7 +66,7 @@
                             <i class="fa-solid fa-comments"></i>
                         </div>
                         <div class="col-12 pt-3">
-                            <h1 class="fw-bold text-start">10</h1>
+                            <h1 class="fw-bold text-start">{{ $totalTestimoni }}</h1>
                         </div>
                     </div>
                 </div>

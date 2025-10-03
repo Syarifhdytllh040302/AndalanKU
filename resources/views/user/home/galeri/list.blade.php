@@ -52,32 +52,46 @@
     </div>
     <div class="row">
         <div class="col-md-12">
-            <h3 class="text-center fw-semibold mb-3">Dokumentasi</h3>
             <div class="row">
-                @for ($galeri = 0; $galeri < 3; $galeri++)
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="card mb-3">
+                @foreach ($galleries as $data)
+                    <div class="col-lg-4 col-md-12 col-sm-12 d-flex">
+                        <div class="card mb-3 d-flex flex-column" style="min-height: 350px;">
                             <div class="card-image">
-                                <img src="{{ asset('img/index/Bg-2.png') }}"
-                                     class="card-img-top object-fit-scale" alt="...">
+                                <img src="{{ asset('img/data/galeri/' . $data->thumbnail) }}"
+                                    class="card-img-top object-fit-scale" alt="...">
                             </div>
-                            <div class="card-body">
-                                <h5 class="card-title">Harlah PKB ke-27</h5>
-                                <p class="card-text">Hari lahir PKB ke-27 di selenggarakan di JJC Senayan pada 23 Juli 2025</p>
-                                <div class="text-end">
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">{{ $data->title }}</h5>
+                                <p class="card-text">{{ Str::limit($data->caption, 60) }}</p>
+
+                                @php
+                                    $images = [];
+                                    $images[] = asset('img/data/galeri/' . $data->thumbnail);
+
+                                    if (!empty($data->dokumentasi) && file_exists(public_path('img/data/galeri/' . $data->dokumentasi))) {
+                                        $images[] = asset('img/data/galeri/' . $data->dokumentasi);
+                                    }
+
+                                    if (!empty($data->rancangan) && file_exists(public_path('img/data/galeri/' . $data->rancangan))) {
+                                        $images[] = asset('img/data/galeri/' . $data->rancangan);
+                                    }
+                                @endphp
+
+                                <div class="text-end mt-auto">
                                     <button class="btn btn-outline-danger"
-                                            data-bs-toggle="modal"
-                                            data-bs-target="#galleryModal"
-                                            data-title="Harlah PKB ke-27"
-                                            data-desc="Hari lahir PKB ke-27 di selenggarakan di JJC Senayan pada 23 Juli 2025"
-                                            data-images='["{{ asset('img/index/Bg-1.png') }}","{{ asset('img/index/Bg-2.png') }}","{{ asset('img/index/Bg-3.png') }}"]'>
+                                        data-bs-toggle="modal"
+                                        data-bs-target="#galleryModal"
+                                        data-title="{{ $data->title }}"
+                                        data-desc="{{ $data->caption }}"
+                                        data-images='@json($images)'>
                                         Lihat Gambar
                                     </button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                @endfor
+
+                @endforeach
             </div>
         </div>
     </div>
@@ -132,7 +146,7 @@
         images.forEach(src => {
             const slide = document.createElement('div');
             slide.className = 'swiper-slide';
-            slide.innerHTML = `<img src="${src}" class="w-100 h-100 object-fit-contain" />`;
+            slide.innerHTML = `<img src="${src}" class="w-100 h-100 object-fit-cover" />`;
             imageContainer.appendChild(slide);
         });
 

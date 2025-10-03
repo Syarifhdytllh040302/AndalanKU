@@ -15,6 +15,7 @@ class KategoriFactory extends Factory
     {
         return [
             'nama_kategori' => $this->faker->word,
+            'icon_kategori' => $this->faker->word,
             'thumbnail' => $this->faker->imageUrl(640, 480, 'products'),
         ];
     }

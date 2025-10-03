@@ -4,24 +4,8 @@
             <h4 class="fw-bold text-center mb-5">TELAH DIPERCAYA OLEH</h4>
             <div class="col-md-12 client-logo-wrapper">
                 <div class="client-track d-flex justify-content-center flex-wrap gap-4">
-                    @php
-                        $clients = [
-                            'BadanSiber.png',
-                            'KemenDesa.png',
-                            'Kemnaker.png',
-                            'Kemper.png',
-                            'Microsoft.png',
-                            'Migas.png',
-                            'OJK.png',
-                            'PertaminaGas.png',
-                            'PKB.png',
-                            'PMI.png',
-                            'Puspenerbad.png'
-                        ]
-                    @endphp
-                    @foreach(
-                        array_merge($clients, $clients) as $client)
-                        <img src="{{ asset('img/index/client/' . $client) }}" alt="{{ $client }}" class="img-fluid">
+                    @foreach($client as $data)
+                        <img src="{{ asset('img/data/client/' . $data->logo_client) }}" alt="{{ $data->nama_client }}" loading="lazy" class="img-fluid">
                     @endforeach
                 </div>
             </div>
